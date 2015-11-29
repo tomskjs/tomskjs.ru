@@ -60,6 +60,7 @@ html, body {
 
 .wrapper {
     height: 100%;
+    min-height: 600px;
 
     display: flex;
     flex-direction: column;
@@ -70,8 +71,11 @@ html, body {
 .logo {
     position: relative;
     background: url(img/logo.svg);
+    background-size: 100%;
     width: 300px;
     height: 300px;
+    min-width: 300px;
+    min-height: 300px;
     margin-bottom: 50px;
 }
 
