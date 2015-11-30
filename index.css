@@ -89,6 +89,28 @@ html, body {
 }
 
 
+.center {
+    text-align: center;
+}
+
+
+.mdash {
+  display: inline-block;
+  margin-bottom: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 1px;
+  width: 25px;
+  background-color: black;
+}
+
+
+.badge {
+    transform: translateY(5px);
+    display: inline-block;
+}
+
+
 .social {
     margin-top: 20px;
     display: flex;
