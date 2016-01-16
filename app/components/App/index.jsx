@@ -3,8 +3,6 @@ import CSSModules from 'react-css-modules'
 import styles from './styles.css'
 
 
-import Header from 'components/Header'
-
 @CSSModules(styles)
 export default class App extends React.Component {
 
@@ -16,7 +14,6 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div styleName='app'>
-				<Header />
 				{this.props.children}
 			</div>
 		)
