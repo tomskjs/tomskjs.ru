@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "description": "tomskjs site",
   "scripts": {
-    "lint": "npm run lint:css --silent && npm run lint:js --silent",
+    "lint": "npm run lint:css && npm run lint:js",
     "lint:js": "eslint --ext .jsx --ext .js app server utils",
     "lint:css": "stylelint 'app/**/*.css'",
     "fix": "npm run lint:js -- --fix",
-    "pretest": "npm run lint --silent",
+    "pretest": "npm run lint",
     "test": "karma start --single-run=true",
     "build": "better-npm-run build",
     "start": "better-npm-run start",

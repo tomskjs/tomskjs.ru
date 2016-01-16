@@ -11,19 +11,19 @@ import TodoFooter from 'components/TodoFooter'
 // https://github.com/gajus/react-css-modules/issues/8
 
 const TodoApp = props => (
-	<div styleName='todoapp'>
-		<h1 styleName='title'>todos</h1>
-		<div styleName='content'>
-			<TodoHeader {...props} {...props.actions} styles={null} />
-			<TodoMainSection {...props} {...props.actions} styles={null} />
-			<TodoFooter {...props} {...props.actions} styles={null} />
-		</div>
-	</div>
+  <div styleName='todoapp'>
+    <h1 styleName='title'>todos</h1>
+    <div styleName='content'>
+      <TodoHeader {...props} {...props.actions} styles={null} />
+      <TodoMainSection {...props} {...props.actions} styles={null} />
+      <TodoFooter {...props} {...props.actions} styles={null} />
+    </div>
+  </div>
 )
 
 TodoApp.propTypes = {
-	todos: PropTypes.array.isRequired,
-	actions: PropTypes.object.isRequired,
+  todos: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired,
 }
 
 export default CSSModules(TodoApp, styles)

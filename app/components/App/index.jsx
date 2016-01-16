@@ -6,16 +6,16 @@ import styles from './styles.css'
 @CSSModules(styles)
 export default class App extends React.Component {
 
-	static propTypes = {
-		children: PropTypes.element,
-	};
+  static propTypes = {
+    children: PropTypes.element,
+  };
 
 
-	render() {
-		return (
-			<div styleName='app'>
-				{this.props.children}
-			</div>
-		)
-	}
+  render() {
+    return (
+      <div styleName='app'>
+        {this.props.children}
+      </div>
+    )
+  }
 }

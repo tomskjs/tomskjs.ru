@@ -5,166 +5,166 @@ import NyanProgressPlugin from 'nyan-progress-webpack-plugin'
 import loadersByExtension from './loadersByExtension'
 
 const loadersByExt = loadersByExtension({
-	json: 'json',
-	'yaml|yml': 'json!yaml',
-	'png|jpg|cur|gif': 'url?limit=5000',
-	'woff|woff2': 'url?limit=1',
-	svg: 'url?limit=10000',
+  json: 'json',
+  'yaml|yml': 'json!yaml',
+  'png|jpg|cur|gif': 'url?limit=5000',
+  'woff|woff2': 'url?limit=1',
+  svg: 'url?limit=10000',
 })
 
 const root = path.join(__dirname, '..')
 
 
 export default function makeWebpackConfig(opts = {}) {
-	const options = {
-		optimize: false,
-		breakpoints: false,
-		prerender: false,
-		nyan: false,
-		...opts,
-	}
+  const options = {
+    optimize: false,
+    breakpoints: false,
+    prerender: false,
+    nyan: false,
+    ...opts,
+  }
 
-	const entry = []
-	const debug = process.env.NODE_ENV !== 'production'
-	const dev = process.env.NODE_ENV === 'development'
-	const playground = process.env.NODE_ENV === 'playground'
+  const entry = []
+  const debug = process.env.NODE_ENV !== 'production'
+  const dev = process.env.NODE_ENV === 'development'
+  const playground = process.env.NODE_ENV === 'playground'
 
-	const cssModulesLocalIdentName = !debug ? '[hash:base64:10]' : '[name]__[local]___[hash:base64:5]'
+  const cssModulesLocalIdentName = !debug ? '[hash:base64:10]' : '[name]__[local]___[hash:base64:5]'
 
-	if (dev) {
-		entry.push('webpack-hot-middleware/client')
-		// entry.push('component-inspector/dist/react');
-	}
+  if (dev) {
+    entry.push('webpack-hot-middleware/client')
+    // entry.push('component-inspector/dist/react');
+  }
 
-	if (playground) {
-		entry.push('webpack-hot-middleware/client?reload=true')
-		entry.push('cosmos-js')
-	}
+  if (playground) {
+    entry.push('webpack-hot-middleware/client?reload=true')
+    entry.push('cosmos-js')
+  }
 
-	if (options.prerender) {
-		entry.push('./app/prerender')
-	} else {
-		entry.push('./app/index')
-	}
+  if (options.prerender) {
+    entry.push('./app/prerender')
+  } else {
+    entry.push('./app/index')
+  }
 
-	const config = {
-		entry: options.prerender ? entry : ['babel-polyfill', ...entry],
-		output: {
-			path: path.join(root, 'build', options.prerender ? 'prerender' : 'public'),
-			filename: 'bundle.js',
-			publicPath: '/',
-			libraryTarget: options.prerender ? 'commonjs2' : undefined,
-		},
+  const config = {
+    entry: options.prerender ? entry : ['babel-polyfill', ...entry],
+    output: {
+      path: path.join(root, 'build', options.prerender ? 'prerender' : 'public'),
+      filename: 'bundle.js',
+      publicPath: '/',
+      libraryTarget: options.prerender ? 'commonjs2' : undefined,
+    },
 
-		target: options.prerender ? 'node' : 'web',
+    target: options.prerender ? 'node' : 'web',
 
-		plugins: [
-			new webpack.DefinePlugin({
-				OPTIMIZED: options.optimize,
-				OPEN_FILE_URL: '"/open-in-editor"',
-				'process.env': {
-					NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-				},
-			}),
-			new ExtractTextPlugin('main.css', {
-				allChunks: true,
-				disable: debug,
-			}),
-		],
+    plugins: [
+      new webpack.DefinePlugin({
+        OPTIMIZED: options.optimize,
+        OPEN_FILE_URL: '"/open-in-editor"',
+        'process.env': {
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        },
+      }),
+      new ExtractTextPlugin('main.css', {
+        allChunks: true,
+        disable: debug,
+      }),
+    ],
 
-		// #cheap-module-eval-source-map for sourcemaps without breakpoints
-		devtool: (debug && !options.breakpoints) ? 'eval' : '#source-map',
-		bail: !debug,
-		debug,
+    // #cheap-module-eval-source-map for sourcemaps without breakpoints
+    devtool: (debug && !options.breakpoints) ? 'eval' : '#source-map',
+    bail: !debug,
+    debug,
 
-		resolve: {
-			root: path.join(root, 'app'),
-			extensions: ['', '.js', '.jsx'],
-			modulesDirectories: ['app', 'node_modules'],
-			alias: {
-				COSMOS_COMPONENTS: path.join(__dirname, '../app/components'),
-				COSMOS_FIXTURES: path.join(__dirname, '../app/components'),
-				sinon: 'sinon/pkg/sinon',
-			},
-		},
+    resolve: {
+      root: path.join(root, 'app'),
+      extensions: ['', '.js', '.jsx'],
+      modulesDirectories: ['app', 'node_modules'],
+      alias: {
+        COSMOS_COMPONENTS: path.join(__dirname, '../app/components'),
+        COSMOS_FIXTURES: path.join(__dirname, '../app/components'),
+        sinon: 'sinon/pkg/sinon',
+      },
+    },
 
-		resolveLoader: {
-			root: [
-				path.join(root, 'node_modules'),
-				root,
-			],
-		},
+    resolveLoader: {
+      root: [
+        path.join(root, 'node_modules'),
+        root,
+      ],
+    },
 
-		// babel: !dev ? {} : {
-		// 	plugins: [
-		// 		require('babel-plugin-react-display-name'),
-		// 		require('babel-plugin-source-wrapper').configure({
-		// 			basePath: process.cwd(),
-		// 			runtime: true,
-		// 		}),
-		// 	],
-		// },
+    // babel: !dev ? {} : {
+    //  plugins: [
+    //    require('babel-plugin-react-display-name'),
+    //    require('babel-plugin-source-wrapper').configure({
+    //      basePath: process.cwd(),
+    //      runtime: true,
+    //    }),
+    //  ],
+    // },
 
-		postcss: () => [
-			require('stylelint'),
-			require('postcss-browser-reporter'),
-			require('postcss-reporter')({ clearMessages: true }),
-			require('postcss-font-magician')(),
-			require('postcss-axis'),
-			require('postcss-initial')(),
-			require('autoprefixer'),
-			require('precss'),
-		],
+    postcss: () => [
+      require('stylelint'),
+      require('postcss-browser-reporter'),
+      require('postcss-reporter')({ clearMessages: true }),
+      require('postcss-font-magician')(),
+      require('postcss-axis'),
+      require('postcss-initial')(),
+      require('autoprefixer'),
+      require('precss'),
+    ],
 
-		module: {
-			noParse: [/node_modules\/sinon\//],
-			loaders: loadersByExt.concat([
-				{
-					test: /\.jsx?$/,
-					loader: 'babel',
-					include: path.join(root, 'app'),
-				}, {
-					test: /\.css$/,
-					loader: ExtractTextPlugin.extract(
-						'style',
-						`css?modules&importLoaders=1&localIdentName=${cssModulesLocalIdentName}!postcss`
-					),
-				},
-			]),
-		},
+    module: {
+      noParse: [/node_modules\/sinon\//],
+      loaders: loadersByExt.concat([
+        {
+          test: /\.jsx?$/,
+          loader: 'babel',
+          include: path.join(root, 'app'),
+        }, {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract(
+            'style',
+            `css?modules&importLoaders=1&localIdentName=${cssModulesLocalIdentName}!postcss`
+          ),
+        },
+      ]),
+    },
 
-		externals: {
-			jsdom: 'window',
-			cheerio: 'window',
-			'react/lib/ReactContext': 'window',
-			'react/lib/ExecutionEnvironment': true,
-		},
-	}
+    externals: {
+      jsdom: 'window',
+      cheerio: 'window',
+      'react/lib/ReactContext': 'window',
+      'react/lib/ExecutionEnvironment': true,
+    },
+  }
 
-	if (options.optimize) {
-		config.plugins.push(
-			new webpack.optimize.OccurenceOrderPlugin(),
-			new webpack.optimize.DedupePlugin(),
-			new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
-		)
-	} else {
-		config.plugins.push(
-			new webpack.HotModuleReplacementPlugin(),
-			new webpack.NoErrorsPlugin(),
-		)
-	}
+  if (options.optimize) {
+    config.plugins.push(
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
+    )
+  } else {
+    config.plugins.push(
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
+    )
+  }
 
-	if (options.prerender) {
-		config.plugins.push(
-			new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
-		)
-	}
+  if (options.prerender) {
+    config.plugins.push(
+      new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
+    )
+  }
 
-	if (options.nyan) {
-		config.plugins.push(
-			new NyanProgressPlugin(),
-		)
-	}
+  if (options.nyan) {
+    config.plugins.push(
+      new NyanProgressPlugin(),
+    )
+  }
 
-	return config
+  return config
 }

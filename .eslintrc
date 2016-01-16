@@ -13,8 +13,6 @@ globals:
 
 rules:
   arrow-parens: [1, 'as-needed']
-  indent: [2, 'tab']
-  react/jsx-indent-props: [2, 'tab']
   jsx-quotes: [2, 'prefer-single']
   id-length: 0
   no-console: 0

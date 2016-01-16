@@ -10,16 +10,16 @@ import configureStore from 'store/configureStore'
 const store = configureStore()
 
 export default req => {
-	const location = createLocation(req.url)
-	let app = null
+  const location = createLocation(req.url)
+  let app = null
 
-	match({ routes, location }, (error, redirect, renderProps) => {
-		app = renderToString(
-			<Provider store={store} key='provider'>
-				<RoutingContext {...renderProps} />
-			</Provider>
-		)
-	})
+  match({ routes, location }, (error, redirect, renderProps) => {
+    app = renderToString(
+      <Provider store={store} key='provider'>
+        <RoutingContext {...renderProps} />
+      </Provider>
+    )
+  })
 
-	return app
+  return app
 }

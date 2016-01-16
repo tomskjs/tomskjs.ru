@@ -4,5 +4,5 @@ import { syncHistory } from 'redux-simple-router'
 export const reduxRouterMiddleware = syncHistory(browserHistory)
 
 export default [
-	reduxRouterMiddleware,
+  reduxRouterMiddleware,
 ]

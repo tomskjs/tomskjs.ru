@@ -11,30 +11,30 @@ const store = configureStore()
 reduxRouterMiddleware.listenForReplays(store)
 
 const router = (
-	<Router history={browserHistory}>
-		{routes}
-	</Router>
+  <Router history={browserHistory}>
+    {routes}
+  </Router>
 )
 
 
 const content = (() => {
-	if (process.env.NODE_ENV === 'development') {
-		const DevTools = require('./containers/DevTools').default
-		return (
-			<div>
-				{router}
-				<DevTools />
-			</div>
-		)
-	}
-	return router
+  if (process.env.NODE_ENV === 'development') {
+    const DevTools = require('./containers/DevTools').default
+    return (
+      <div>
+        {router}
+        <DevTools />
+      </div>
+    )
+  }
+  return router
 })()
 
 
 const app = (
-	<Provider store={store}>
-		{content}
-	</Provider>
+  <Provider store={store}>
+    {content}
+  </Provider>
 )
 
 render(app, document.getElementById('root'))

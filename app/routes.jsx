@@ -4,8 +4,8 @@ import App from './components/App'
 import IndexPage from 'containers/IndexPage'
 
 export default (
-	<Route path='/' component={App}>
-		<IndexRoute component={IndexPage} />
-		<Redirect from='*' to='/' />
-	</Route>
+  <Route path='/' component={App}>
+    <IndexRoute component={IndexPage} />
+    <Redirect from='*' to='/' />
+  </Route>
 )
