@@ -1,0 +1,11 @@
+.box {
+	all: initial;
+	display: flex;
+	width: 100px;
+	height: @width;
+	font: inherit;
+}
+
+.text {
+	margin: auto;
+}

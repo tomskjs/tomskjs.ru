@@ -1,0 +1,385 @@
+rules:
+  # at-rule-empty-line-before: "always"|"never"
+  # at-rule-no-vendor-prefix: true
+  # block-closing-brace-newline-after: "always"|"always-single-line"|"never-single-line"|"always-multi-line"|"never-multi-line"
+  # block-closing-brace-newline-before: "always"|"always-multi-line"|"never-multi-line"
+  # block-closing-brace-space-after: "always"|"always-single-line"|"never-single-line"|"always-multi-line"|"never-multi-line"
+  # block-closing-brace-space-before: "always"|"never"|"always-single-line"|"never-single-line"|"always-multi-line"|"never-multi-line"
+  # block-no-empty: true
+  block-no-empty: true
+  # block-opening-brace-newline-after: "always"|"always-multi-line"|"never-multi-line"
+  # block-opening-brace-newline-before: "always"|"always-single-line"|"never-single-line"|"always-multi-line"|"never-multi-line"
+  # block-opening-brace-space-after: "always"|"always-single-line"|"never-single-line"|"always-multi-line"|"never-multi-line"
+  # block-opening-brace-space-before: "always"|"always-single-line"|"never-single-line"|"always-multi-line"|"never-multi-line"
+  # color-hex-case: "lower"|"upper"
+  # color-hex-length: "short"|"long"
+  # color-no-hex: true
+  # color-no-invalid-hex: true
+  color-no-invalid-hex: true
+  # color-no-named: true
+  # comment-empty-line-before: "always"|"never"
+  # comment-whitespace-inside: "always"|"never"
+  # custom-media-pattern: string
+  # custom-property-no-outside-root: true
+  # custom-property-pattern: string
+  # declaration-bang-space-after: "always"|"never"
+  # declaration-bang-space-before: "always"|"never"
+  # declaration-block-no-single-line: true
+  # declaration-block-semicolon-newline-after: "always"|"always-multi-line"|"never-multi-line"
+  # declaration-block-semicolon-newline-before: "always"|"always-multi-line"|"never-multi-line"
+  # declaration-block-semicolon-space-after: "always"|"never"|"always-single-line"|"never-single-line"
+  # declaration-block-semicolon-space-before: "always"|"never"|"always-single-line"|"never-single-line"
+  # declaration-block-single-line-max-declarations: int
+  # declaration-colon-newline-after: "always"|"always-multi-line"
+  # declaration-colon-space-after: "always"|"never"|"always-single-line"
+  # declaration-colon-space-before: "always"|"never"
+  # declaration-no-important: true
+  # function-blacklist: string|[]
+  # function-calc-no-unspaced-operator: true
+  # function-comma-newline-after: "always"|"always-multi-line"|"never-multi-line"
+  # function-comma-newline-before: "always"|"always-multi-line"|"never-multi-line"
+  # function-comma-space-after: "always"|"never"|"always-single-line"|"never-single-line"
+  # function-comma-space-before: "always"|"never"|"always-single-line"|"never-single-line"
+  # function-linear-gradient-no-nonstandard-direction: true
+  # function-parentheses-newline-inside: "always"|"always-multi-line"|"never-multi-line"
+  # function-parentheses-space-inside: "always"|"never"|"always-single-line"|"never-single-line"
+  # function-url-quotes: "single"|"double"|"none"
+  # function-whitelist: string|[]
+  # function-whitespace-after: "always"|"never"
+  # indentation: int|"tab"
+  indentation: tab
+  # max-empty-lines: int
+  max-empty-lines: 5
+  # max-line-length: int
+  max-line-length: 120
+  # media-feature-colon-space-after: "always"|"never"
+  # media-feature-colon-space-before: "always"|"never"
+  # media-feature-name-no-vendor-prefix: true
+  # media-feature-range-operator-space-after: "always"|"never"
+  # media-feature-range-operator-space-before: "always"|"never"
+  # media-query-list-comma-newline-after: "always"|"always-multi-line"|"never-multi-line"
+  # media-query-list-comma-newline-before: "always"|"always-multi-line"|"never-multi-line"
+  # media-query-list-comma-space-after: "always"|"never"|"always-single-line"|"never-single-line"
+  # media-query-list-comma-space-before: "always"|"never"|"always-single-line"|"never-single-line"
+  # media-query-parentheses-space-inside: "always"|"never"
+  # no-eol-whitespace: true
+  # no-missing-eof-newline: true
+  # number-leading-zero: "always"|"never"
+  # number-max-precision: int
+  # number-no-trailing-zeros: true
+  # number-zero-length-no-unit: true
+  # property-blacklist: string|[]
+  # property-no-vendor-prefix: true
+  property-no-vendor-prefix: true
+  # property-unit-blacklist: string|[]
+  # property-unit-whitelist: string|[]
+  # property-whitelist: string|[]
+  # root-no-standard-properties: true
+  # rule-nested-empty-line-before: "always"|"never"
+  # rule-no-duplicate-properties: true
+  rule-no-duplicate-properties: true
+  # rule-no-shorthand-property-overrides: true
+  # rule-non-nested-empty-line-before: "always"|"never"
+  # rule-properties-order: "alphabetical"|[]
+  rule-properties-order:
+    - all
+    - box-sizing
+    - display
+    - position
+    - top
+    - right
+    - bottom
+    - left
+    - offset-inline-start
+    - offset-inline-end
+    - offset-block-start
+    - offset-block-end
+    - flex
+    - flex-basis
+    - flex-direction
+    - flex-flow
+    - flex-grow
+    - flex-shrink
+    - flex-wrap
+    - box-align
+    - box-decoration-break
+    - box-direction
+    - box-orient
+    - align-content
+    - align-items
+    - align-self
+    - justify-content
+    - order
+    - width
+    - min-width
+    - max-width
+    - height
+    - min-height
+    - max-height
+    - inline-size
+    - min-inline-size
+    - max-inline-size
+    - block-size
+    - min-block-size
+    - max-block-size
+    - margin
+    - margin-top
+    - margin-right
+    - margin-bottom
+    - margin-left
+    - margin-inline-start
+    - margin-inline-end
+    - margin-block-start
+    - margin-block-end
+    - padding
+    - padding-top
+    - padding-right
+    - padding-bottom
+    - padding-left
+    - padding-inline-start
+    - padding-inline-end
+    - padding-block-start
+    - padding-block-end
+    - float
+    - clear
+    - break-before
+    - break-after
+    - break-inside
+    - page-break-before
+    - page-break-after
+    - page-break-inside
+    - orphans
+    - columns
+    - column-gap
+    - column-fill
+    - column-rule
+    - column-rule-color
+    - column-rule-style
+    - column-rule-width
+    - column-span
+    - column-count
+    - column-width
+    - object-fit
+    - object-position
+    - transform
+    - transform-box
+    - transform-function
+    - transform-origin
+    - transform-style
+    - transition
+    - transition-delay
+    - transition-duration
+    - transition-property
+    - transition-timing-function
+    - will-change
+    - border
+    - border-top
+    - border-right
+    - border-bottom
+    - border-left
+    - border-width
+    - border-top-width
+    - border-right-width
+    - border-bottom-width
+    - border-left-width
+    - border-style
+    - border-top-style
+    - border-right-style
+    - border-bottom-style
+    - border-left-style
+    - border-radius
+    - border-top-right-radius
+    - border-top-left-radius
+    - border-bottom-right-radius
+    - border-bottom-left-radius
+    - border-inline-start
+    - border-inline-start-color
+    - border-inline-start-style
+    - border-inline-start-width
+    - border-inline-end
+    - border-inline-end-color
+    - border-inline-end-style
+    - border-inline-end-width
+    - border-block-start
+    - border-block-start-color
+    - border-block-start-style
+    - border-block-start-width
+    - border-block-end
+    - border-block-end-color
+    - border-block-end-style
+    - border-block-end-width
+    - border-color
+    - border-image
+    - border-image-outset
+    - border-image-repeat
+    - border-image-slice
+    - border-image-source
+    - border-image-width
+    - border-top-color
+    - border-right-color
+    - border-bottom-color
+    - border-left-color
+    - outline
+    - outline-color
+    - outline-offset
+    - outline-style
+    - outline-width
+    - backdrop-filter
+    - backface-visibility
+    - background
+    - background-attachment
+    - background-blend-mode
+    - background-clip
+    - background-color
+    - background-image
+    - background-origin
+    - background-position
+    - background-repeat
+    - background-size
+    - isolation
+    - color
+    - font
+    - font-family
+    - font-feature-settings
+    - font-kerning
+    - font-language-override
+    - font-size
+    - font-size-adjust
+    - font-stretch
+    - font-style
+    - font-synthesis
+    - font-variant
+    - font-variant-alternates
+    - font-variant-caps
+    - font-variant-east-asian
+    - font-variant-ligatures
+    - font-variant-numeric
+    - font-variant-position
+    - font-weight
+    - hyphens
+    - initial-letter
+    - initial-letter-align
+    - letter-spacing
+    - line-break
+    - line-height
+    - list-style
+    - list-style-image
+    - list-style-position
+    - list-style-type
+    - direction
+    - text-align
+    - text-align-last
+    - text-decoration
+    - text-decoration-color
+    - text-decoration-line
+    - text-decoration-style
+    - text-underline-position
+    - text-indent
+    - text-orientation
+    - text-overflow
+    - text-rendering
+    - text-shadow
+    - text-size-adjust
+    - text-transform
+    - white-space
+    - word-break
+    - word-spacing
+    - word-wrap
+    - --*
+    - revert
+    - animation
+    - animation-name
+    - animation-duration
+    - animation-fill-mode
+    - animation-play-state
+    - animation-timing-function
+    - animation-delay
+    - animation-iteration-count
+    - animation-direction
+    - blend-mode
+    - mix-blend-mode
+    - border-collapse
+    - border-spacing
+    - box-shadow
+    - caption-side
+    - clip
+    - clip-path
+    - content
+    - counter-increment
+    - counter-reset
+    - custom-ident
+    - cursor
+    - empty-cells
+    - filter
+    - image-orientation
+    - image-rendering
+    - ime-mode
+    - marks
+    - mask
+    - mask-type
+    - mq-boolean
+    - opacity
+    - overflow
+    - overflow-clip-box
+    - overflow-wrap
+    - overflow-x
+    - overflow-y
+    - perspective
+    - perspective-origin
+    - pointer-events
+    - quotes
+    - resize
+    - ruby-align
+    - ruby-position
+    - scroll-behavior
+    - scroll-snap-coordinate
+    - scroll-snap-destination
+    - scroll-snap-points-x
+    - scroll-snap-points-y
+    - scroll-snap-type
+    - scroll-snap-type-x
+    - scroll-snap-type-y
+    - shape-image-threshold
+    - shape-margin
+    - shape-box
+    - shape-outside
+    - tab-size
+    - table-layout
+    - text-combine-upright
+    - touch-action
+    - unicode-bidi
+    - unicode-range
+    - url
+    - vertical-align
+    - visibility
+    - widows
+    - riting-mode"
+    - z-index
+
+  # rule-trailing-semicolon: "always"|"never"
+  rule-trailing-semicolon: always
+  # selector-class-pattern: string
+  # selector-combinator-space-after: "always"|"never"
+  # selector-combinator-space-before: "always"|"never"
+  # selector-id-pattern: string
+  # selector-list-comma-newline-after: "always"|"always-multi-line"|"never-multi-line"
+  # selector-list-comma-newline-before: "always"|"always-multi-line"|"never-multi-line"
+  # selector-list-comma-space-after: "always"|"never"|"always-single-line"|"never-single-line"
+  # selector-list-comma-space-before: "always"|"never"|"always-single-line"|"never-single-line"
+  # selector-no-attribute: true
+  # selector-no-combinator: true
+  # selector-no-id: true
+  selector-no-id: true
+  # selector-no-type: true
+  # selector-no-universal: true
+  # selector-no-vendor-prefix: true
+  # selector-pseudo-element-colon-notation: true
+  # selector-root-no-composition: true
+  # string-quotes: true
+  # unit-blacklist: string|[]
+  # unit-whitelist: string|[]
+  # value-list-comma-newline-after: "always"|"always-multi-line"|"never-multi-line"
+  # value-list-comma-newline-before: "always"|"always-multi-line"|"never-multi-line"
+  # value-list-comma-space-after: "always"|"never"|"always-single-line"|"never-single-line"
+  # value-list-comma-space-before: "always"|"never"|"always-single-line"|"never-single-line"
+  # value-no-vendor-prefix: true
