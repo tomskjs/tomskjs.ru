@@ -1,50 +1,50 @@
-import path from 'path';
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
-import loadersByExtension from './loadersByExtension';
+import path from 'path'
+import webpack from 'webpack'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import NyanProgressPlugin from 'nyan-progress-webpack-plugin'
+import loadersByExtension from './loadersByExtension'
 
 const loadersByExt = loadersByExtension({
-	'json': 'json',
+	json: 'json',
 	'yaml|yml': 'json!yaml',
 	'png|jpg|cur|gif': 'url?limit=5000',
 	'woff|woff2': 'url?limit=1',
-	'svg': 'url?limit=10000',
-});
+	svg: 'url?limit=10000',
+})
 
-const root = path.join(__dirname, '..');
+const root = path.join(__dirname, '..')
 
 
 export default function makeWebpackConfig(opts = {}) {
-	const entry = [];
-	const debug = process.env.NODE_ENV !== 'production';
-	const dev = process.env.NODE_ENV === 'development';
-	const playground = process.env.NODE_ENV === 'playground';
-
-	const cssModulesLocalIdentName = !debug ? '[hash:base64:10]' : '[name]__[local]___[hash:base64:5]';
-
-	if (dev) {
-		entry.push('webpack-hot-middleware/client');
-		// entry.push('component-inspector/dist/react');
-	}
-
-	if (playground) {
-		entry.push('webpack-hot-middleware/client?reload=true');
-		entry.push('cosmos-js');
-	}
-
 	const options = {
 		optimize: false,
 		breakpoints: false,
 		prerender: false,
-		nyan: true,
+		nyan: false,
 		...opts,
-	};
+	}
+
+	const entry = []
+	const debug = process.env.NODE_ENV !== 'production'
+	const dev = process.env.NODE_ENV === 'development'
+	const playground = process.env.NODE_ENV === 'playground'
+
+	const cssModulesLocalIdentName = !debug ? '[hash:base64:10]' : '[name]__[local]___[hash:base64:5]'
+
+	if (dev) {
+		entry.push('webpack-hot-middleware/client')
+		// entry.push('component-inspector/dist/react');
+	}
+
+	if (playground) {
+		entry.push('webpack-hot-middleware/client?reload=true')
+		entry.push('cosmos-js')
+	}
 
 	if (options.prerender) {
-		entry.push('./app/prerender');
+		entry.push('./app/prerender')
 	} else {
-		entry.push('./app/index');
+		entry.push('./app/index')
 	}
 
 	const config = {
@@ -72,7 +72,8 @@ export default function makeWebpackConfig(opts = {}) {
 			}),
 		],
 
-		devtool: (debug && !options.breakpoints) ? 'eval' : '#source-map', // #cheap-module-eval-source-map for sourcemaps without breakpoints
+		// #cheap-module-eval-source-map for sourcemaps without breakpoints
+		devtool: (debug && !options.breakpoints) ? 'eval' : '#source-map',
 		bail: !debug,
 		debug,
 
@@ -124,7 +125,10 @@ export default function makeWebpackConfig(opts = {}) {
 					include: path.join(root, 'app'),
 				}, {
 					test: /\.css$/,
-					loader: ExtractTextPlugin.extract('style', `css?modules&importLoaders=1&localIdentName=${cssModulesLocalIdentName}!postcss`),
+					loader: ExtractTextPlugin.extract(
+						'style',
+						`css?modules&importLoaders=1&localIdentName=${cssModulesLocalIdentName}!postcss`
+					),
 				},
 			]),
 		},
@@ -135,32 +139,32 @@ export default function makeWebpackConfig(opts = {}) {
 			'react/lib/ReactContext': 'window',
 			'react/lib/ExecutionEnvironment': true,
 		},
-	};
+	}
 
 	if (options.optimize) {
 		config.plugins.push(
 			new webpack.optimize.OccurenceOrderPlugin(),
 			new webpack.optimize.DedupePlugin(),
 			new webpack.optimize.UglifyJsPlugin({ compressor: { warnings: false } }),
-		);
+		)
 	} else {
 		config.plugins.push(
 			new webpack.HotModuleReplacementPlugin(),
 			new webpack.NoErrorsPlugin(),
-		);
+		)
 	}
 
 	if (options.prerender) {
 		config.plugins.push(
 			new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
-		);
+		)
 	}
 
 	if (options.nyan) {
 		config.plugins.push(
 			new NyanProgressPlugin(),
-		);
+		)
 	}
 
-	return config;
+	return config
 }

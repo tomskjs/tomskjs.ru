@@ -4,12 +4,11 @@ import configureStore from 'store/configureStore'
 import { Provider } from 'react-redux'
 import { Router, browserHistory } from 'react-router'
 import routes from './routes'
-import { syncReduxAndRouter } from 'redux-simple-router'
+import { reduxRouterMiddleware } from 'middlewares'
 
 
 const store = configureStore()
-
-syncReduxAndRouter(browserHistory, store)
+reduxRouterMiddleware.listenForReplays(store)
 
 const router = (
 	<Router history={browserHistory}>

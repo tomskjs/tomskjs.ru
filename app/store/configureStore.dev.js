@@ -1,6 +1,7 @@
-import { createStore, compose } from 'redux'
+import { createStore, compose, applyMiddleware } from 'redux'
 import { persistState } from 'redux-devtools'
 import rootReducer from '../reducers'
+import middlewares from 'middlewares'
 import DevTools from '../containers/DevTools'
 
 function getDebugSessionKey() {
@@ -12,7 +13,7 @@ function getDebugSessionKey() {
 
 const finalCreateStore = compose(
 	// Middleware you want to use in development:
-	// applyMiddleware(d1, d2, d3),
+	applyMiddleware(...middlewares),
 	// Required! Enable Redux DevTools with the monitors you chose
 	DevTools.instrument(),
 	// Optional. Lets you write ?debug_session=<key> in address bar to persist debug sessions
