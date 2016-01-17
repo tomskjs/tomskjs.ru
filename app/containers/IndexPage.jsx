@@ -9,9 +9,9 @@ export default class TestPage extends Component {
   render() {
     return (
       <div>
-        <Logo />
-        <Title>Title</Title>
-        <Text>Text</Text>
+        <div style={{ float: 'left' }}><Logo /></div>
+        <Title size='l'>Title</Title>
+        <Text size='l'>Text</Text>
         <Link href='/todo'><Text>todo</Text></Link>
       </div>
     )

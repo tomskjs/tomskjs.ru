@@ -1,19 +1,34 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
+import { Link as RouterLink } from 'react-router'
 
 
 function Link(props) {
+  const LinkElement = (() => {
+    if (props.to) {
+      return RouterLink
+    }
+    return 'a'
+  })()
+
   return (
-    <a styleName='link' {...props}>
+    <LinkElement styleName='link' {...props}>
       {props.children}
-    </a>
+    </LinkElement>
   )
 }
 
 Link.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.node,
+    PropTypes.element,
+  ]),
   size: PropTypes.oneOf(['l', 'm', 's']),
+  to: PropTypes.string, // for local links
+  href: PropTypes.string, // for external links
 }
 
 Link.defaultProps = {

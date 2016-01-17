@@ -6,10 +6,10 @@ import loadersByExtension from './loadersByExtension'
 
 const loadersByExt = loadersByExtension({
   json: 'json',
+  svg: 'svg-inline!svgo',
   'yaml|yml': 'json!yaml',
   'png|jpg|cur|gif': 'url?limit=5000',
   'woff|woff2': 'url?limit=1',
-  svg: 'url?limit=10000',
 })
 
 const root = path.join(__dirname, '..')
