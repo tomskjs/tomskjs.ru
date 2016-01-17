@@ -1,4 +1,28 @@
+@import '../../styles/variables.css';
+
 .title {
   all: initial;
+  color: $c-ocean-green;
   font: inherit;
+  font-weight: normal;
+}
+
+.size-l {
+  font-size: 52px;
+}
+
+.size-m {
+  font-size: 42px;
+}
+
+.size-s {
+  font-size: 32px;
+}
+
+.size-xs {
+  font-size: 25px;
+}
+
+.size-xxs {
+  font-size: 20px;
 }

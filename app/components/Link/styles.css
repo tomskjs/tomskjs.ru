@@ -1,0 +1,11 @@
+@import '../../styles/variables.css';
+
+.link {
+  all: initial;
+  color: $c-blue;
+  font: inherit;
+
+  &:hover {
+    border-bottom: solid 1px $c-blue;
+  }
+}

@@ -1,4 +1,17 @@
 .text {
   all: initial;
+  color: inherit;
   font: inherit;
+}
+
+.size-l {
+  font-size: 20px;
+}
+
+.size-m {
+  font-size: 18px;
+}
+
+.size-s {
+  font-size: 15px;
 }

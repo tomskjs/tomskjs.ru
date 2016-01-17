@@ -1,24 +1,23 @@
 import React, { PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
-import cx from 'classnames'
 
 
-function Text(props) {
+function Link(props) {
   return (
-    <span styleName={cx('text', `size-${props.size}`)}>
+    <a styleName='link' {...props}>
       {props.children}
-    </span>
+    </a>
   )
 }
 
-Text.propTypes = {
+Link.propTypes = {
   children: PropTypes.string,
   size: PropTypes.oneOf(['l', 'm', 's']),
 }
 
-Text.defaultProps = {
+Link.defaultProps = {
   size: 'm',
 }
 
-export default CSSModules(Text, styles, { allowMultiple: true })
+export default CSSModules(Link, styles, { allowMultiple: true })
