@@ -6,14 +6,17 @@ import cx from 'classnames'
 
 function Text(props) {
   return (
-    <span styleName={cx('text', `size-${props.size}`)}>
+    <p styleName={cx('text', `size-${props.size}`)}>
       {props.children}
-    </span>
+    </p>
   )
 }
 
 Text.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]),
   size: PropTypes.oneOf(['l', 'm', 's']),
 }
 
