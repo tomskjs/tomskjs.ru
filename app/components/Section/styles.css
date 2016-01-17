@@ -1,0 +1,9 @@
+@import '../../styles/variables.css';
+
+.section {
+  padding-x: 30px;
+
+  @media (--medium) {
+    padding-x: 0px;
+  }
+}

@@ -13,16 +13,16 @@
   .size-$keyword {
     font-size: $font-size;
     @media (--medium) {
-      font-size: calc($font-size - 3);
+      font-size: calc($font-size - 5);
     }
     @media (--small) {
-      font-size: calc($font-size - 6);
+      font-size: calc($font-size - 10);
     }
   }
 }
 
-@mixin size l 52px;
-@mixin size m 42px;
-@mixin size s 32px;
-@mixin size xs 25px;
-@mixin size xss 20px;
+@mixin size l, 52px;
+@mixin size m, 42px;
+@mixin size s, 32px;
+@mixin size xs, 25px;
+@mixin size xss, 20px;

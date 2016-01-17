@@ -114,6 +114,7 @@ export default function makeWebpackConfig(opts = {}) {
       require('postcss-axis'),
       require('postcss-initial')(),
       require('postcss-cssnext'),
+      require('postcss-clearfix'),
     ],
 
     module: {

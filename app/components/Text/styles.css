@@ -19,6 +19,6 @@
   }
 }
 
-@mixin size l 20px;
-@mixin size m 18px;
-@mixin size m 15px;
+@mixin size l, 20px;
+@mixin size m, 18px;
+@mixin size s, 15px;

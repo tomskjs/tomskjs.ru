@@ -3,6 +3,7 @@
 .about {
   all: initial;
   display: block;
+  clear: fix;
   font: inherit;
 }
 
