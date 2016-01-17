@@ -47,7 +47,7 @@ rules:
   # function-whitelist: string|[]
   # function-whitespace-after: "always"|"never"
   # indentation: int|"tab"
-  indentation: tab
+  indentation: 2
   # max-empty-lines: int
   max-empty-lines: 5
   # max-line-length: int
