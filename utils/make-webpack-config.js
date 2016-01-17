@@ -109,11 +109,11 @@ export default function makeWebpackConfig(opts = {}) {
       require('stylelint'),
       require('postcss-browser-reporter'),
       require('postcss-reporter')({ clearMessages: true }),
+      require('precss'),
       require('postcss-font-magician')(),
       require('postcss-axis'),
       require('postcss-initial')(),
-      require('autoprefixer'),
-      require('precss'),
+      require('postcss-cssnext'),
     ],
 
     module: {
