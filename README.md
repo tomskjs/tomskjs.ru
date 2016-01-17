@@ -1,3 +1,3 @@
-React Project Template
+tomskjs.ru
 ===
-[![Circle CI](https://circleci.com/gh/Nitive/react-project-template.svg?style=svg)](https://circleci.com/gh/Nitive/react-project-template)
+[![Circle CI](https://circleci.com/gh/tomskjs/tomskjs.ru.svg?style=svg)](https://circleci.com/gh/tomskjs/tomskjs.ru)
