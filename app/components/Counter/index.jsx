@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
 
 @CSSModules(styles)
-export default class Counter extends React.Component {
+export default class Counter extends Component {
 
   static propTypes = {
     start: PropTypes.number,

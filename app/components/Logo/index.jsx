@@ -2,23 +2,19 @@ import React, { Component, PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
 
-import Layout from 'components/Layout'
-
 
 @CSSModules(styles)
-export default class App extends Component {
+export default class Logo extends Component {
 
   static propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.string,
   };
 
 
   render() {
     return (
-      <div styleName='app'>
-        <Layout>
-          {this.props.children}
-        </Layout>
+      <div>
+        logo
       </div>
     )
   }

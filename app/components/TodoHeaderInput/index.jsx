@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
 
 const ENTER_KEY = 13
 
 @CSSModules(styles)
-export default class TodoHeader extends React.Component {
+export default class TodoHeader extends Component {
 
   static propTypes = {
     addTodo: PropTypes.func.isRequired,

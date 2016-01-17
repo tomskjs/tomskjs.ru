@@ -1,0 +1,12 @@
+.layout {
+  all: initial;
+  display: block;
+  width: 1024px;
+  height: calc(100vh - (@margin-top * 2));
+  margin: 0;
+  margin-x: auto;
+  margin-top: 50px;
+  background-color: white;
+  font: inherit;
+  box-shadow: 0 2px 4px #0008;
+}

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Counter from 'components/Counter'
 
 
-export default class AnotherPage extends React.Component {
+export default class AnotherPage extends Component {
   render() {
     return (
       <div>

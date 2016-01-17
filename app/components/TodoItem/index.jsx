@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
 import cx from 'classnames'
@@ -6,7 +6,7 @@ import cx from 'classnames'
 const ENTER_KEY = 13
 
 
-class TodoItem extends React.Component {
+class TodoItem extends Component {
 
   constructor(props) {
     super(props)
