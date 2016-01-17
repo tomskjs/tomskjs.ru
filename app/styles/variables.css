@@ -2,3 +2,6 @@ $c-green: #009e51;
 $c-ocean-green: #377b77;
 $c-blue: #008bff;
 $c-cream: #fff8e1;
+
+@custom-media --small (width < 600px);
+@custom-media --medium (width <= 1024px);

@@ -5,14 +5,8 @@ import InlineSVG from 'svg-inline-react'
 
 
 function Logo(props) {
-  const style = {
-    display: 'inline-block',
-    width: props.width,
-    height: props.height,
-  }
-
   return (
-    <div {...{ ...props, style }}>
+    <div styleName='logo' {...props}>
       <InlineSVG src={require('./logo.svg')} />
     </div>
   )

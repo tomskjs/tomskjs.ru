@@ -1,17 +1,24 @@
+@import '../../styles/variables.css';
+
 .text {
   all: initial;
   color: inherit;
   font: inherit;
+  line-height: 1.2;
 }
 
-.size-l {
-  font-size: 20px;
+@define-mixin size $keyword, $font-size {
+  .size-$keyword {
+    font-size: $font-size;
+    @media (--medium) {
+      font-size: calc($font-size - 1);
+    }
+    @media (--small) {
+      font-size: calc($font-size - 2);
+    }
+  }
 }
 
-.size-m {
-  font-size: 18px;
-}
-
-.size-s {
-  font-size: 15px;
-}
+@mixin size l 20px;
+@mixin size m 18px;
+@mixin size m 15px;

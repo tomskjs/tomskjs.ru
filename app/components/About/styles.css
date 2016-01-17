@@ -1,0 +1,50 @@
+@import '../../styles/variables.css';
+
+.about {
+  all: initial;
+  display: block;
+  font: inherit;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+  padding-top: 5px;
+  padding-right: 45px;
+  padding-left: 15px;
+  float: left;
+
+  @media (--medium) {
+    width: 150px;
+    height: 150px;
+    padding-top: 0;
+    padding-right: 25px;
+    padding-left: 0;
+  }
+
+  @media (--small) {
+    width: 80px;
+    height: 80px;
+    margin-left: -15px;
+    padding-right: 10px;
+    float: left;
+  }
+}
+
+.title {
+  word-break: break-all;
+
+  @media (--small) {
+    height: 100px;
+  }
+}
+
+.text {
+  padding-right: 5vw;
+}
+
+.github {
+  @media (--small) {
+    display: none;
+  }
+}

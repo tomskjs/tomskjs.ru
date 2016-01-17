@@ -1,12 +1,22 @@
+@import '../../styles/variables.css';
+
 .layout {
   all: initial;
+  box-sizing: border-box;
   display: block;
-  width: 1024px;
-  height: calc(100vh - (@margin-y * 2));
+  position: relative;
+  max-width: 1024px;
+  min-height: calc(100vh - (@margin-y * 2));
   margin: 0;
   margin-x: auto;
   margin-y: 50px;
+  padding: 30px;
   background-color: white;
   font: inherit;
   box-shadow: 0 2px 4px #0008;
+
+  @media (--medium) {
+    margin-y: 0;
+    padding-y: 15px;
+  }
 }
