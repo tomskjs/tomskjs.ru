@@ -11,7 +11,7 @@ function Layout(props) {
 }
 
 Layout.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
 }
 
 export default CSSModules(Layout, styles)

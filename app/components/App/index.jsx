@@ -2,8 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
 
-import Layout from 'components/Layout'
-
 
 @CSSModules(styles)
 export default class App extends Component {
@@ -16,9 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <div styleName='app'>
-        <Layout>
-          {this.props.children}
-        </Layout>
+        {this.props.children}
       </div>
     )
   }

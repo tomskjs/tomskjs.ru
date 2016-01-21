@@ -23,7 +23,7 @@
       }
     },
     "start": {
-      "command": "nodemon --watch server/* --exec babel-node server/server",
+      "command": "nodemon --watch server --exec 'babel-node server/server'",
       "env": {
         "NODE_ENV": "development"
       }

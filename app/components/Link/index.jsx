@@ -20,12 +20,7 @@ function Link(props) {
 }
 
 Link.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-    PropTypes.node,
-    PropTypes.element,
-  ]),
+  children: PropTypes.node,
   size: PropTypes.oneOf(['l', 'm', 's']),
   to: PropTypes.string, // for local links
   href: PropTypes.string, // for external links
