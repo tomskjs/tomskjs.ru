@@ -1,0 +1,12 @@
+@import '../../styles/variables.css';
+
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  padding-y: 20px;
+  padding-x: 20px;
+
+  @media (--medium) {
+    padding-x: 10px;
+  }
+}

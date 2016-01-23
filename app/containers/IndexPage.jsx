@@ -5,6 +5,9 @@ import Section from 'components/Section'
 import Title from 'components/Title'
 import Text from 'components/Text'
 import ImportantEvent from 'components/ImportantEvent'
+import Events from 'components/Events'
+import Event from 'components/Event'
+import Markdown from 'components/Markdown'
 import Tweets from 'components/Tweets'
 
 export default class IndexPage extends Component {
@@ -32,6 +35,22 @@ export default class IndexPage extends Component {
             <Title>События</Title>
           </Section>
           <ImportantEvent />
+          <Events>
+            <Event />
+            <Event />
+            <Event />
+          </Events>
+          <Section>
+            <Title>Люди</Title>
+            <Title>Связи</Title>
+            <Text>
+              <Markdown typographify>
+                Вступайте в [группу "Вконтакте"](//vk.com/tomskjs) и [Facebook](//facebook.com/tomskjs),
+                подписывайтесь на [@tomskjs](//twitter.com/tomskjs) в Twitter.
+                Добавляйтесь в [Slack](//slack.tomskjs.ru) для живого общения.
+              </Markdown>
+            </Text>
+          </Section>
         </Layout>
         <Tweets />
       </div>
