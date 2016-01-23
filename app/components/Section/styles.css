@@ -4,6 +4,6 @@
   padding-x: 60px;
 
   @media (--medium) {
-    padding-x: 0px;
+    padding-x: 30px;
   }
 }

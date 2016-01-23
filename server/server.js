@@ -87,7 +87,6 @@ app.post('/tweets', (req, res) => {
 
 app.get('/*', (req, res) => {
   const application = getPrerenderedMakeup(req)
-  console.log({ application })
   res.render('./index', { content: application })
 })
 

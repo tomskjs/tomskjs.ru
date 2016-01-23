@@ -15,7 +15,7 @@ function Title(props) {
   })()
 
   return (
-    <Tag styleName={cx('title', `size-${props.size}`)}>
+    <Tag styleName={cx('title', `size-${props.size}`, { compact: props.compact })}>
       {props.children}
     </Tag>
   )
@@ -24,10 +24,12 @@ function Title(props) {
 Title.propTypes = {
   children: PropTypes.string,
   size: PropTypes.oneOf(['l', 'm', 's', 'xs', 'xxs']),
+  compact: PropTypes.bool,
 }
 
 Title.defaultProps = {
   size: 'm',
+  compact: false,
 }
 
 

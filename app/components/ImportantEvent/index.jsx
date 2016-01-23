@@ -19,18 +19,17 @@ something
 - 'test'
 - "test"
 - [todo](/todo)
-- [something](/something)
 - [vk](https://vk.com)
 `
 
 function ImportantEvent(props) {
   return (
     <div styleName='event'>
-      <Title size='s'>Четвертая встреча Front-End разработчиков</Title>
+      <Title size='s' compact>Четвертая встреча Front-End разработчиков</Title>
       <Text>
         <Markdown>{text}</Markdown>
       </Text>
-      <Link>{link} ⥱</Link>
+      <Link to='/'>{link} ⥱</Link>
     </div>
   )
 }

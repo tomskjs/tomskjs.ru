@@ -9,4 +9,12 @@
   border-y: solid 1px $c-green;
   background-color: $c-cream;
   font: inherit;
+
+  @media (--medium) {
+    padding-x: 40px;
+  }
+
+  @media (--small) {
+    padding-x: 10px;
+  }
 }
