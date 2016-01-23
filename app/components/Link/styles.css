@@ -2,10 +2,21 @@
 
 .link {
   all: initial;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: currentColor;
   color: $c-blue;
   font: inherit;
 
   &:hover {
-    border-bottom: solid 1px $c-blue;
+    color: #00b8ff;
+  }
+
+  &:focus {
+    color: red;
+  }
+
+  &:visited {
+    color: #8b25ff;
   }
 }
