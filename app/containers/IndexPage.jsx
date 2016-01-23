@@ -7,6 +7,8 @@ import Text from 'components/Text'
 import ImportantEvent from 'components/ImportantEvent'
 import Events from 'components/Events'
 import Event from 'components/Event'
+import Avatars from 'components/Avatars'
+import Avatar from 'components/Avatar'
 import Markdown from 'components/Markdown'
 import Tweets from 'components/Tweets'
 
@@ -42,6 +44,16 @@ export default class IndexPage extends Component {
           </Events>
           <Section>
             <Title>Люди</Title>
+            <Avatars>
+              <Avatar />
+              <Avatar />
+              <Avatar />
+              <Avatar />
+              <Avatar />
+              <Avatar />
+              <Avatar />
+              <Avatar />
+            </Avatars>
             <Title>Связи</Title>
             <Text>
               <Markdown typographify>

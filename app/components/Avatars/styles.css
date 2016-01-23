@@ -1,0 +1,7 @@
+@import '../../styles/variables.css';
+
+.avatars {
+  all: initial;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,17 @@
+@import '../../styles/variables.css';
+
+.avatar {
+  all: initial;
+  display: inline-block;
+  width: 15%;
+  margin: calc(25% / 10);
+  padding-top: @width; /* height (because padding calculated by width) */
+  border-radius: 5px;
+  background-color: aqua;
+
+  @media (--medium) {
+    width: 20%;
+    margin: calc(20% / 8);
+    padding-top: @width; /* height (because padding calculated by width) */
+  }
+}
