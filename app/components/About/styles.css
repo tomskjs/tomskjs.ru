@@ -3,6 +3,8 @@
 .about {
   all: initial;
   display: block;
+  padding-x: 30px;
+  padding-top: 30px;
   clear: fix;
   font: inherit;
 }

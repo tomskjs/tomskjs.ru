@@ -9,8 +9,8 @@
 }
 
 .tweet {
-  width: 48%;
-  padding: 1%;
+  width: 49%;
+  padding-x: .5%;
 
   @media (width < 800px) {
     width: initial;

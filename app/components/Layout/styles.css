@@ -9,7 +9,6 @@
   min-height: calc(100vh - (@margin-y * 2));
   margin-x: auto;
   margin-y: 50px;
-  padding: 30px;
   background-color: white;
   font: inherit;
   box-shadow: 0 2px 4px #0008;

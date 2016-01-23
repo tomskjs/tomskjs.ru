@@ -1,7 +1,7 @@
 @import '../../styles/variables.css';
 
 .section {
-  padding-x: 30px;
+  padding-x: 60px;
 
   @media (--medium) {
     padding-x: 0px;

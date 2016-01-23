@@ -13,7 +13,7 @@ export default class IndexPage extends Component {
         <Layout>
           <About />
           <Section>
-            <Title>Наши цели</Title>
+            <Title size='s'>Наши цели</Title>
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -21,13 +21,14 @@ export default class IndexPage extends Component {
               consequat.
             </Text>
 
-            <Title>Участие</Title>
+            <Title size='s'>Участие</Title>
             <Text>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
               quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
               consequat.
             </Text>
+            <Title>События</Title>
           </Section>
         </Layout>
         <Tweets />
