@@ -20,7 +20,7 @@
       font-size: calc($font-size - 5);
     }
     @media (--small) {
-      font-size: calc($font-size - 10);
+      font-size: calc($font-size - 8);
     }
   }
 }
@@ -29,4 +29,4 @@
 @mixin size m, 42px;
 @mixin size s, 32px;
 @mixin size xs, 25px;
-@mixin size xss, 20px;
+@mixin size xxs, 20px;

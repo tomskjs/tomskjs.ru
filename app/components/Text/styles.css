@@ -4,7 +4,7 @@
   all: initial;
   color: inherit;
   font: inherit;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 @define-mixin size $keyword, $font-size {

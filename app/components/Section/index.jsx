@@ -12,7 +12,7 @@ function Section(props) {
 }
 
 Section.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.node,
 }
 
 export default CSSModules(Section, styles)
