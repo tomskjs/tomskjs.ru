@@ -6,9 +6,9 @@ import cx from 'classnames'
 
 function Text(props) {
   return (
-    <p styleName={cx('text', `size-${props.size}`)}>
+    <span styleName={cx('text', `size-${props.size}`)}>
       {props.children}
-    </p>
+    </span>
   )
 }
 
