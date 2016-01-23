@@ -33,7 +33,7 @@ export default function makeWebpackConfig(opts = {}) {
 
   if (dev) {
     entry.push('webpack-hot-middleware/client')
-    // entry.push('component-inspector/dist/react');
+    // entry.push('component-inspector/dist/react')
   }
 
   if (playground) {
@@ -64,6 +64,7 @@ export default function makeWebpackConfig(opts = {}) {
         OPEN_FILE_URL: '"/open-in-editor"',
         'process.env': {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+          PRERENDER: options.prerender,
         },
       }),
       new ExtractTextPlugin('main.css', {
@@ -85,6 +86,7 @@ export default function makeWebpackConfig(opts = {}) {
         COSMOS_COMPONENTS: path.join(__dirname, '../app/components'),
         COSMOS_FIXTURES: path.join(__dirname, '../app/components'),
         sinon: 'sinon/pkg/sinon',
+        'utils/getScript': path.join(root, options.prerender ? 'utils/object' : 'app/utils/getScript'),
       },
     },
 
@@ -95,15 +97,20 @@ export default function makeWebpackConfig(opts = {}) {
       ],
     },
 
-    // babel: !dev ? {} : {
-    //  plugins: [
-    //    require('babel-plugin-react-display-name'),
-    //    require('babel-plugin-source-wrapper').configure({
-    //      basePath: process.cwd(),
-    //      runtime: true,
-    //    }),
-    //  ],
-    // },
+    babel: {
+      env: {
+        development: {
+          presets: ['react-hmre'],
+        },
+      },
+     // plugins: [
+     //   require('babel-plugin-react-display-name'),
+     //   require('babel-plugin-source-wrapper').configure({
+     //     basePath: process.cwd(),
+     //     runtime: true,
+     //   }),
+     // ],
+    },
 
     postcss: () => [
       require('stylelint'),

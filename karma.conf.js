@@ -1,8 +1,8 @@
-require('babel-register');
-require('webpack');
-require('karma-webpack');
-const webpackConfig = require('./utils/make-webpack-config').default();
-webpackConfig.devtool = 'inline-source-map';
+require('babel-register')
+require('webpack')
+require('karma-webpack')
+const webpackConfig = require('./utils/makeWebpackConfig').default()
+webpackConfig.devtool = 'inline-source-map'
 
 
 module.exports = config => {
@@ -22,5 +22,5 @@ module.exports = config => {
     webpackServer: {
       noInfo: true,
     },
-  });
-};
+  })
+}

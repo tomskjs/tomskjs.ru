@@ -14,6 +14,7 @@ const getPrerenderedMakeup = (() => {
   try {
     return require('../build/prerender/bundle').default
   } catch (err) {
+    console.log(err.toString().bgBlack.red)
     return () => ''
   }
 })()
@@ -26,7 +27,7 @@ if (argv.optimize) {
   buildOptions.optimize = true
 }
 
-import makeConfig from '../utils/make-webpack-config'
+import makeConfig from '../utils/makeWebpackConfig'
 const webpackConfig = makeConfig(buildOptions)
 const compiler = webpack(webpackConfig)
 
@@ -84,8 +85,9 @@ app.post('/tweets', (req, res) => {
     })
 })
 
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   const application = getPrerenderedMakeup(req)
+  console.log({ application })
   res.render('./index', { content: application })
 })
 

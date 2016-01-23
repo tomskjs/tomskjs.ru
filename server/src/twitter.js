@@ -8,7 +8,7 @@ const client = new Twitter({
   access_token_secret: config.TWITTER_ACCESS_TOKEN_SECRET,
 })
 
-const getTweet = tweetId => {
+export const getTweet = tweetId => {
   return new Promise((resolve, reject) => {
     client.get('statuses/oembed', { id: tweetId }, (err, data) => {
       if (err) reject(err)

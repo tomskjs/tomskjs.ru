@@ -1,52 +1,58 @@
 import React, { Component, PropTypes } from 'react'
 import CSSModules from 'react-css-modules'
 import styles from './styles.css'
-import { connect } from 'react-refetch'
-import getScript from 'getscript-promise'
+import { connect as refetch } from 'react-refetch'
+import getScript from 'utils/getScript'
 
 
 const fetches = props => ({
-  tweetsFetch: {
-    url: '/tweets',
-    method: 'POST',
-    body: JSON.stringify({
-      tweetIds: [
-        '678972492917178373',
-        '671317476999843841',
-        '690463015536324609',
-        '689928073236627457',
-      ],
-    }),
-  },
+  loadTweets: () => ({
+    tweetsFetch: {
+      url: '/tweets',
+      method: 'POST',
+      body: JSON.stringify({
+        tweetIds: [
+          '678972492917178373',
+          '671317476999843841',
+          '690463015536324609',
+          '689928073236627457',
+        ],
+      }),
+    },
+  }),
 })
 
-@connect(fetches)
+@refetch(fetches)
 @CSSModules(styles)
 export default class Tweets extends Component {
-  constructor(props) {
-    super(props)
-    this.tweetsLoaded = false
+
+  static propTypes = {
+    loadTweets: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
+    this.props.loadTweets()
   }
 
   componentDidUpdate() {
-    if (!this.tweetsLoaded) {
-      this.tweetsLoaded = true
+    if (!process.env.PRERENDER) {
       getScript('//platform.twitter.com/widgets.js').then(() => {
         twttr.widgets.load()
-      })
+      }).catch(err => console.log(err))
     }
   }
 
   render() {
     const { tweetsFetch } = this.props
+    if (!tweetsFetch) return null
 
     if (tweetsFetch.pending) {
-      return <h1>'loading...'</h1>
+      return <h2>'loading...'</h2>
     }
 
     if (tweetsFetch.rejected) {
       console.log(tweetsFetch.reason)
-      return <h1>{tweetsFetch.reason.toString()}</h1>
+      return <h2>{tweetsFetch.reason.toString()}</h2>
     }
 
     if (tweetsFetch.fulfilled) {

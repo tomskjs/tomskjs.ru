@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import webpack from 'webpack'
 import filesize from 'filesize'
-import makeConfig from './make-webpack-config'
+import makeConfig from './makeWebpackConfig'
 import 'colors'
 
 const config = makeConfig({
