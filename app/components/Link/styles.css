@@ -8,15 +8,15 @@
   color: $c-blue;
   font: inherit;
 
+  &:visited {
+    color: #8b25ff;
+  }
+
   &:hover {
     color: #00b8ff;
   }
 
   &:focus {
     color: red;
-  }
-
-  &:visited {
-    color: #8b25ff;
   }
 }

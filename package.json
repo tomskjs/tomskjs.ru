@@ -96,6 +96,7 @@
     "morgan": "^1.6.1",
     "node-bin": "^5.5.0",
     "npm": "^3.5.3",
+    "npm-install-loader": "^1.1.1",
     "nyan-progress-webpack-plugin": "^1.1.4",
     "phantomjs": "^1.9.19",
     "phantomjs-polyfill": "0.0.1",

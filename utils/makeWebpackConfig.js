@@ -139,6 +139,13 @@ export default function makeWebpackConfig(opts = {}) {
           ),
         },
       ]),
+      postLoaders: [
+        {
+          exclude: /node_modules/,
+          loader: 'npm-install',
+          test: /\.jsx?$/,
+        },
+      ],
     },
 
     externals: {

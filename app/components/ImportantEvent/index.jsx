@@ -29,7 +29,7 @@ function ImportantEvent(props) {
       <Text>
         <Markdown>{text}</Markdown>
       </Text>
-      <Link to='/'>{link} ⥱</Link>
+      <Link to='/link'>{link}</Link>
     </div>
   )
 }
