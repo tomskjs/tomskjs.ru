@@ -4,7 +4,11 @@
   display: flex;
   flex-wrap: wrap;
   padding-y: 20px;
-  padding-x: 20px;
+  padding-x: 70px;
+
+  @media (--medium) {
+    padding-x: 30px;
+  }
 
   @media (--medium) {
     padding-x: 10px;
