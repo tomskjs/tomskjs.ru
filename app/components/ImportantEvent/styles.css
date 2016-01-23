@@ -1,0 +1,12 @@
+@import '../../styles/variables.css';
+
+
+.event {
+  all: initial;
+  display: block;
+  padding-x: 100px;
+  padding-y: 20px 30px;
+  border-y: solid 1px $c-green;
+  background-color: $c-cream;
+  font: inherit;
+}

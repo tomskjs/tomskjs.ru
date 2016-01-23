@@ -4,6 +4,7 @@ import About from 'components/About'
 import Section from 'components/Section'
 import Title from 'components/Title'
 import Text from 'components/Text'
+import ImportantEvent from 'components/ImportantEvent'
 import Tweets from 'components/Tweets'
 
 export default class IndexPage extends Component {
@@ -30,6 +31,7 @@ export default class IndexPage extends Component {
             </Text>
             <Title>События</Title>
           </Section>
+          <ImportantEvent />
         </Layout>
         <Tweets />
       </div>
