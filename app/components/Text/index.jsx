@@ -13,10 +13,7 @@ function Text(props) {
 }
 
 Text.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-  ]),
+  children: PropTypes.node,
   size: PropTypes.oneOf(['l', 'm', 's']),
 }
 

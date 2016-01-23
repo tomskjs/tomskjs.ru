@@ -5,10 +5,19 @@ import cx from 'classnames'
 
 
 function Title(props) {
+  const Tag = (() => {
+    switch (props.size) {
+      case 'l': return 'h1'
+      case 'm': return 'h2'
+      case 's': return 'h3'
+      default: return 'h4'
+    }
+  })()
+
   return (
-    <h1 styleName={cx('title', `size-${props.size}`)}>
+    <Tag styleName={cx('title', `size-${props.size}`)}>
       {props.children}
-    </h1>
+    </Tag>
   )
 }
 
