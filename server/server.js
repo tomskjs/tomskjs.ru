@@ -14,7 +14,7 @@ const getPrerenderedMakeup = (() => {
   try {
     return require('../build/prerender/bundle').default
   } catch (err) {
-    console.log(err.toString().bgBlack.red)
+    console.log(`Prerender invalid (${err})`.bgBlack.red)
     return () => ''
   }
 })()
