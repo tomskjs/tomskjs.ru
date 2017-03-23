@@ -18,6 +18,10 @@
   dependencies:
     xstream "10.x"
 
+"@types/node@^7.0.10":
+  version "7.0.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.10.tgz#d860abb18c1b58b552c7c6cd8b2ba7adf6546fa3"
+
 abbrev@1:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"
