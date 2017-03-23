@@ -7,7 +7,10 @@ dev-server:
 ts-check:
 	tsc -p . -w --noEmit --pretty
 
-start:
-	concurrently --raw 'make dev-server' 'make ts-check'
+tcm:
+	tcm -w src/
 
-.PHONY: dev-server ts-check start
+start:
+	concurrently --raw 'make dev-server' 'make ts-check' 'make tcm'
+
+.PHONY: dev-server ts-check tcm start

@@ -1,3 +1,4 @@
+import './styles.css'
 import { run, FantasyObservable, Drivers } from '@cycle/run'
 import { VNode, DOMSource, div, makeDOMDriver } from '@cycle/dom'
 import xs, { Stream } from 'xstream'
