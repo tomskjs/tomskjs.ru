@@ -1,0 +1,31 @@
+{
+  "name": "tomsk.js",
+  "version": "0.1.0",
+  "description": "TomskJS site",
+  "main": "assets/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomskjs/tomskjs.ru.git"
+  },
+  "author": "TomskJS Community",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomskjs/tomskjs.ru/issues"
+  },
+  "homepage": "https://github.com/Nitive/calculator#readme",
+  "devDependencies": {
+    "@cycle/dom": "^16.0.0",
+    "@cycle/run": "^3.0.0",
+    "concurrently": "^3.4.0",
+    "ts-loader": "^2.0.1",
+    "tslint": "^4.5.1",
+    "tslint-config-standard": "^4.0.0",
+    "typescript": "^2.2.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "xstream": "^10.3.0"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^2.28.0"
+  }
+}
