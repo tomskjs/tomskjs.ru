@@ -3,6 +3,23 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { HotModuleReplacementPlugin } = require('webpack')
 
+const postcssPlugins = [
+  require('postcss-cssnext')({
+    features: {
+      customProperties: {
+        variables: {
+          '--color-poisonous-green': '#377B77'
+        }
+      },
+      customMedia: {
+        extensions: {
+          '--desktop': `(width > 768px)`,
+        }
+      }
+    },
+  }),
+]
+
 module.exports = {
   entry: ['./src/index.ts'],
   output: {
@@ -14,7 +31,7 @@ module.exports = {
     extensions: ['.ts', '.js'],
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.ts$/,
       loader: 'ts-loader',
       options: {
@@ -23,15 +40,22 @@ module.exports = {
       exclude: /node_modules/,
     }, {
       test: /\.css$/,
-      loaders: [
+      use: [
         'style-loader',
         {
           loader: 'css-loader',
           options: {
             modules: true,
-            localIdentName: '[local]_[hash:base64:5]'
+            localIdentName: '[local]_[hash:base64:5]',
+            importLoaders: 1,
           },
         },
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: () => postcssPlugins,
+          }
+        }
       ],
     }, {
       test: /\.svg$/,
