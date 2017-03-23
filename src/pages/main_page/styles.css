@@ -1,0 +1,13 @@
+
+.logo {
+  display: inline-block;
+  margin-top: 35px;
+  margin-left: 50px;
+  margin-right: 50px;
+  float: left;
+}
+
+.tomskjs {
+  display: inline-block;
+  margin-top: 20px;
+}
