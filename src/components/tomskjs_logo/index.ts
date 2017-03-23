@@ -1,10 +1,13 @@
 import { svg } from '@cycle/dom'
 
+import * as styles from './styles.css'
+
 export function TomskJSLogo() {
   const attrs = {
-    width: 200,
-    height: 200,
     viewBox: '0 0 200 200',
+    class: styles.logo,
   }
-  return svg({ attrs, props: { innerHTML: require('./logo.svg') } })
+  return svg({ attrs, props: {
+    innerHTML: require('./logo.svg'),
+  } })
 }
