@@ -1,6 +1,8 @@
 .layout {
+  background-color: white;
   @media (--desktop) {
     margin-top: 30px;
+    margin-bottom: 30px;
     min-height: calc(100vh - 60px);
     max-width: calc(100vw - 60px);
     margin-left: auto;
