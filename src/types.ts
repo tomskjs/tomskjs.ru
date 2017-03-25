@@ -10,3 +10,5 @@ export interface Sinks {
   DOM: Stream<VNode>,
   [key: string]: FantasyObservable,
 }
+
+export type Content = string | VNode | Array<VNode | string>

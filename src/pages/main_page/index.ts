@@ -2,14 +2,16 @@ import { div } from '@cycle/dom'
 import xs from 'xstream'
 
 import { Sources, Sinks } from '../../types'
-import { Title } from '../../components/title'
-import { Text } from '../../components/text'
-import { Layout } from '../../components/layout'
-import { TomskJSLogo } from '../../components/tomskjs_logo'
+import { Title } from '../../components/title/'
+import { Text } from '../../components/text/'
+import { Layout } from '../../components/layout/'
+import { TomskJSLogo } from '../../components/tomskjs_logo/'
 import * as css from '../../utils/css'
+import { Activities } from '../../components/activities/'
 
 import * as styles from './styles.css'
 const styl = css.dotify(styles)
+
 
 const about = `
   У тебя не должно быть любимого оружия. Стать слишком близким с одним
@@ -56,6 +58,7 @@ export function MainPage(_: Sources): Sinks {
         DescriptionSection('Наши цели', goals),
         DescriptionSection('Участие', help),
       ]),
+      Activities(),
     ]),
   )
   return {

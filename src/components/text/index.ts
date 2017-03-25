@@ -1,5 +1,7 @@
-import { p, VNode } from '@cycle/dom'
+import { p } from '@cycle/dom'
 import { HyperScriptHelperFn } from '@cycle/dom/lib/hyperscript-helpers'
+
+import { Content } from '../../types'
 import * as css from '../../utils/css'
 
 import * as styles from './styles.css'
@@ -15,7 +17,7 @@ interface TitleProps {
 }
 
 
-export function Text(content: string | Array<VNode>, { size = 'M', tag = p }: TitleProps = {}) {
+export function Text(content: Content, { size = 'M', tag = p }: TitleProps = {}) {
   const className = css.merge(
     styles.text,
     size === 'S' && styles.sizeS,
