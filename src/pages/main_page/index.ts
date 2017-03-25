@@ -6,8 +6,10 @@ import { Title } from '../../components/title'
 import { Text } from '../../components/text'
 import { Layout } from '../../components/layout'
 import { TomskJSLogo } from '../../components/tomskjs_logo'
-import * as styles from './styles.css'
+import * as css from '../../utils/css'
 
+import * as styles from './styles.css'
+const styl = css.dotify(styles)
 
 function About() {
   const text = `
@@ -18,17 +20,17 @@ function About() {
   `
 
   return div([
-    div('.' + styles.logo, TomskJSLogo()),
-    div('.' + styles.heading, Title('TomskJS', { size: 'L' })),
-    div('.' + styles.headerText, Text(text)),
+    div(styl.logo, TomskJSLogo()),
+    div(styl.heading, Title('TomskJS', { size: 'L' })),
+    div(styl.headerText, Text(text)),
   ])
 }
 
 
 function DescriptionSection(title: string, text: string) {
-  return div('.' + styles.description, [
-    div('.' + styles.title, Title(title, { size: 'S' })),
-    div('.' + styles.text, Text(text)),
+  return div(styl.description, [
+    div(styl.title, Title(title, { size: 'S' })),
+    div(styl.text, Text(text)),
   ])
 }
 
@@ -37,7 +39,7 @@ export function MainPage(_: Sources): Sinks {
   const vtree$ = xs.of(
     Layout([
       About(),
-      div('.' + styles.descriptions, [
+      div(styl.descriptions, [
         DescriptionSection('Наши цели', 'Стратегия Ити отличается от других систем тем, что если ты хоть немного уклонишься с верного Пути, то подвергнешься опасности и попадешь на скользкую дорогу. Если ты будешь просто перелистывать эту книгу, ты не постигнешь Пути Стратегии. Впитай сказанное. Не просто читай, запоминая или имитируя, но напряженно изучай, чтобы вобрать знания в свое существо и ощутить принцип собственным сердцем.'),
         DescriptionSection('Участие', 'Рассчитывай все. Расчет в Стратегии невозможно изучить без большого объема практики.'),
       ]),
