@@ -1,4 +1,4 @@
-import { header, article } from '@cycle/dom'
+import { header, article, div } from '@cycle/dom'
 
 import { Content } from '../../types'
 import * as css from '../../utils/css'
@@ -10,14 +10,22 @@ const styl = css.dotify(styles)
 
 interface ActivityProps {
   title: Content,
-  text: Content,
+  content: Content,
+  highlighted?: boolean,
 }
 
-export function Activity(props: ActivityProps) {
-  return article(styl.activity, [
-    header(styl.title, [
-      Title(props.title, { size: 'XS' }),
+export function Activity({ highlighted = false, ...props }: ActivityProps) {
+  const classes = css.merge(
+    styles.activity,
+    highlighted && styles.highlighted,
+  )
+
+  return article(classes, [
+    div(styl.content, [
+      header(styl.title, [
+        Title(props.title, { size: 'XS' }),
+      ]),
+      Text(props.content, { size: 'S' }),
     ]),
-    Text(props.text, { size: 'S' }),
   ])
 }

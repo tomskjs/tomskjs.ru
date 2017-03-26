@@ -8,7 +8,9 @@ const postcssPlugins = [
     features: {
       customProperties: {
         variables: {
-          '--color-poisonous-green': '#377B77'
+          '--color-cornsilk': '#fff8e1',
+          '--color-green': '#009e51',
+          '--color-viridian': '#377b77',
         }
       },
       customMedia: {

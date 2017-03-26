@@ -8,7 +8,11 @@
   display: list-item;
   font: inherit;
   list-style-type: none;
-  margin-left: 15px;
+  margin-left: 5px;
+
+  @media (--desktop) {
+    margin-left: 15px;
+  }
 
   &:not(:last-child) {
     margin-bottom: 3px;
