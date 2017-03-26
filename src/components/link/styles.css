@@ -1,0 +1,8 @@
+.link {
+  color: deepskyblue;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 1px solid deepskyblue;
+  }
+}
