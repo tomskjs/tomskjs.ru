@@ -5,7 +5,6 @@
 
 .item {
   all: initial;
-  position: relative;
   display: list-item;
   font: inherit;
   list-style-type: none;
@@ -16,11 +15,6 @@
   }
 
   &::before {
-    content: '▶︎';
-    font-size: .6em;
-    position: absolute;
-    left: -15px;
-    top: 4px;
-    color: var(--color-poisonous-green);
+    content: '• ';
   }
 }

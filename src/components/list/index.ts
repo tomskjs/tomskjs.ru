@@ -1,4 +1,4 @@
-import { ul, li } from '@cycle/dom'
+import { ul, li, span } from '@cycle/dom'
 
 import { Content } from '../../types'
 import { Text } from '../text/'
@@ -9,5 +9,5 @@ const styl = css.dotify(styles)
 
 
 export function List(content: Content[]) {
-  return ul(styl.list, content.map(item => li(styl.item, Text(item))))
+  return ul(styl.list, content.map(item => li(styl.item, Text(item, { tag: span }))))
 }
