@@ -16,7 +16,11 @@ tcm-watch:
 start: tcm
 	concurrently --raw 'make dev-server' 'make ts-check' 'make tcm-watch'
 
-build: tcm
+clean:
+	rm -rf index.html assets/
+	rm -rf src/**/*.css.d.ts
+
+build: clean tcm
 	NODE_ENV=production webpack -p
 
 .PHONY: dev-server ts-check tcm tcm-watch start build
