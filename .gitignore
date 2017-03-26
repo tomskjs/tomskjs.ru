@@ -6,6 +6,7 @@ npm-debug.log
 coverage/
 
 # project
+/dist/
 /assets/
 /index.html
 *.css.d.ts

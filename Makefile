@@ -22,11 +22,17 @@ start: tcm
 .PHONY: start
 
 clean:
-	rm -rf index.html assets/
-	rm -rf src/**/*.css.d.ts
+	rm -rf index.html assets/ dist/ src/**/*.css.d.ts
 .PHONY: clean
 
 build: clean tcm
 	NODE_ENV=production webpack -p
 	gzip --best --keep assets/*
 .PHONY: build
+
+
+server:
+	node start.js
+.PHONY: server
+
+production: build server

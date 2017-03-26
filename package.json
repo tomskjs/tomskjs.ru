@@ -14,8 +14,6 @@
   },
   "homepage": "https://github.com/Nitive/calculator#readme",
   "devDependencies": {
-    "@cycle/dom": "^16.0.0",
-    "@cycle/run": "^3.0.0",
     "@types/node": "^7.0.10",
     "concurrently": "^3.4.0",
     "css-loader": "^0.27.3",
@@ -32,5 +30,14 @@
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
     "xstream": "^10.3.0"
+  },
+  "dependencies": {
+    "@cycle/dom": "^17.0.0",
+    "@cycle/html": "^1.0.0",
+    "@cycle/run": "^3.1.0",
+    "@types/express": "^4.0.35",
+    "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "webpack-stats-plugin": "^0.1.4"
   }
 }
