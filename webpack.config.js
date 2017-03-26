@@ -25,8 +25,8 @@ const postcssPlugins = [
 module.exports = {
   entry: ['./src/index.ts'],
   output: {
-    path: path.join(__dirname, 'assets'),
-    publicPath: '/',
+    path: __dirname,
+    publicPath: '',
     filename: 'assets/[name].[hash].js',
   },
   resolve: {

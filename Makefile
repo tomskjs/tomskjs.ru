@@ -16,4 +16,7 @@ tcm-watch:
 start: tcm
 	concurrently --raw 'make dev-server' 'make ts-check' 'make tcm-watch'
 
-.PHONY: dev-server ts-check tcm tcm-watch start
+build: tcm
+	NODE_ENV=production webpack -p
+
+.PHONY: dev-server ts-check tcm tcm-watch start build
