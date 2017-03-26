@@ -1,15 +1,8 @@
-import { div, hr } from '@cycle/dom'
+import { div } from '@cycle/dom'
 
-import * as css from '../../utils/css'
 import { List } from '../list/'
 import { Activity } from '../activity_card/'
-
-import * as styles from './styles.css'
-const styl = css.dotify(styles)
-
-function separator() {
-  return hr(styl.separator)
-}
+import { Separator } from '../separator/'
 
 export function Activities() {
   return div([
@@ -35,7 +28,7 @@ export function Activities() {
       ]),
     }),
 
-    separator(),
+    Separator(),
 
     Activity({
       title: 'TomskJS #0',
