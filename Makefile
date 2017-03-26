@@ -27,7 +27,6 @@ clean:
 
 build: clean tcm
 	NODE_ENV=production webpack -p
-	gzip --best --keep assets/*
 .PHONY: build
 
 

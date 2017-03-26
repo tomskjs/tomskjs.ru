@@ -1,6 +1,7 @@
 import { run } from '@cycle/run'
 import { makeHTMLDriver } from '@cycle/html'
 import * as express from 'express'
+import * as compression from 'compression'
 
 import { main } from '../app'
 
@@ -34,6 +35,7 @@ function template(content: string, config: Config) {
 
 
 export function start(config: Config) {
+  app.use(compression())
   app.use('/assets', express.static('./assets'))
 
   app.get('/', (_, res) => {
@@ -42,7 +44,13 @@ export function start(config: Config) {
     })
   })
 
-  app.listen(process.env.PORT || 3000)
+  app.listen(process.env.PORT || 3000, (err: Error) => {
+    if (err) {
+      console.error(err)
+    } else {
+      console.log('Started at http://localhost:3000')
+    }
+  })
 
   return app
 }
