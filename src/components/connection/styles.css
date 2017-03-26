@@ -1,5 +1,10 @@
 .connection {
-  margin-left: 110px;
-  margin-right: 110px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding-bottom: 30px;
+
+  @media (--desktop) {
+    margin-left: 110px;
+    margin-right: 110px;
+  }
 }
