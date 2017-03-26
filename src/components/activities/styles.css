@@ -1,17 +1,3 @@
-.activities {
-  margin-top: 30px;
-  padding-bottom: 30px;
-}
-
-.title {
-  margin-left: 30px;
-  margin-bottom: 15px;
-
-  @media (--desktop) {
-    margin-left: 90px;
-  }
-}
-
 .separator {
   border: none;
   height: 1px;

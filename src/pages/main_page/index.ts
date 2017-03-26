@@ -8,6 +8,7 @@ import { Layout } from '../../components/layout/'
 import { TomskJSLogo } from '../../components/tomskjs_logo/'
 import * as css from '../../utils/css'
 import { Activities } from '../../components/activities/'
+import { Connection } from '../../components/connection/'
 
 import * as styles from './styles.css'
 const styl = css.dotify(styles)
@@ -45,7 +46,7 @@ function About() {
 
 function DescriptionSection(title: string, text: string) {
   return div(styl.description, [
-    div(styl.title, Title(title, { size: 'S' })),
+    div(styl.descriptionTitle, Title(title, { size: 'S' })),
     div(styl.text, Text(text)),
   ])
 }
@@ -58,7 +59,14 @@ export function MainPage(_: Sources): Sinks {
         DescriptionSection('Наши цели', goals),
         DescriptionSection('Участие', help),
       ]),
+
+      div(styl.title, Title('События')),
+
       Activities(),
+
+      div(styl.title, Title('Связь')),
+
+      Connection(),
     ]),
   )
   return {
