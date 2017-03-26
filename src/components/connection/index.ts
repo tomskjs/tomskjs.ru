@@ -6,10 +6,6 @@ import { Link } from '../link/'
 import * as styles from './styles.css'
 const styl = css.dotify(styles)
 
-// function separator() {
-//   return hr(styl.separator)
-// }
-
 export function Connection() {
   return div(styl.connection, [
     'Вступайте в ', Link('группу «Вконтакте»', { href: 'https://vk.com/tomskjs' }),
