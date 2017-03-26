@@ -137,7 +137,10 @@ const client = merge([
     plugins: [
       new HtmlWebpackPlugin({ template: './src/index.ejs' }),
       new HotModuleReplacementPlugin(),
-      new ExtractTextPlugin('assets/[hash].css'),
+      new ExtractTextPlugin({
+        filename: 'assets/[hash].css',
+        disable: process.env.NODE_ENV === 'development',
+      }),
       new StatsWriterPlugin({
         filename: 'dist/assets.json',
         transform(data) {

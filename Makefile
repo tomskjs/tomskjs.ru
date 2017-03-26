@@ -2,7 +2,7 @@ SHELL := /bin/bash
 PATH := ./node_modules/.bin:$(PATH)
 
 dev-server:
-	webpack-dev-server --hot
+	NODE_ENV=development webpack-dev-server --hot
 .PHONY: dev-server
 
 ts-check:
