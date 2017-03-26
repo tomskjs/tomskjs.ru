@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const { HotModuleReplacementPlugin } = require('webpack')
 const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
+const nodeExternals = require('webpack-node-externals')
 
 const postcssPlugins = [
   require('postcss-cssnext')({
@@ -60,7 +61,7 @@ function tsLoader() {
     test: /\.ts$/,
     loader: 'ts-loader',
     options: {
-      transpileOnly: true,
+      transpileOnly: process.env.NODE_ENV === 'development',
     },
     exclude: /node_modules/,
   }
@@ -135,7 +136,7 @@ const client = merge([
   ]),
   {
     plugins: [
-      new HtmlWebpackPlugin({ template: './src/index.ejs' }),
+      new HtmlWebpackPlugin({ template: './views/index.ejs' }),
       new HotModuleReplacementPlugin(),
       new ExtractTextPlugin({
         filename: 'assets/[hash].css',
@@ -164,7 +165,10 @@ const server = merge([
     svg(),
     images(),
   ]),
-  { target: 'node' }
+  {
+    target: 'node',
+    externals: [nodeExternals()],
+  }
 ])
 
 module.exports = [client, server]
